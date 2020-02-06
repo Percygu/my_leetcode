@@ -13,9 +13,9 @@ class Solution:
             mid = (l+r)//2
             cnt = 0             #抽屉原理，因为数组里的数都是小于n+1的，n个抽屉，n+1个数，必然有1个抽屉放了两个数
             for num in nums:
-                if num <= mid and num>=1:
+                if num <= mid and num>=l:
                     cnt +=1     #求整个数组中比mid大的数的个数
-            if cnt>mid:
+            if cnt>mid-l+1:
                 r = mid
             else:
                 l = mid +1
